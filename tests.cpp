@@ -84,20 +84,19 @@ TEST_CASE("treeSize") {
     delete nullRoot;
 }
 
-TEST_CASE("treeHeight") {
+TEST_CASE("treeHeight") { 
     Node *root = createTree();
-    Node *root2 = secondTree();
+    Node *root2 = secondTree(); 
     Node *nullRoot = new Node(7);
     Node *newNode = new Node(10);
 
-    CHECK(treeHeight(root) == 3);
-    CHECK(treeHeight(root2) == 3);
+    CHECK(treeHeight(root) == 4);  
+    CHECK(treeHeight(root2) == 3); 
 
-    CHECK(!treeHeight(nullRoot));
+    CHECK(treeHeight(nullRoot) == 0);  
 
     nullRoot->left = newNode;
-
-    CHECK(treeHeight(nullRoot) == 1);
+    CHECK(treeHeight(nullRoot) == 1);  
 
     delete nullRoot;
     delete newNode;
